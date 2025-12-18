@@ -1,35 +1,31 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 const LINKS = [
-  {to: '/', label:'홈'},
-  {to: '/movies/popular', label:'인기 영화'},
-  {to: '/movies/now_playing', label:'상영 중'},
-  {to: '/movies/top_rated', label:'평점 높은'},
-  {to: '/movies/upcoming', label:'개봉 예정'}, 
+  { to: "/", label: "홈" },
+  { to: "/movies/popular", label: "인기 영화" },
+  { to: "/movies/now_playing", label: "상영 중" },
+  { to: "/movies/top_rated", label: "평점 높은" },
+  { to: "/movies/upcoming", label: "개봉 예정" },
 ];
 
 const NavBar = () => {
   return (
-    <div className='flex gap-3 p-4'>
-      {LINKS.map(({to, label}) => 
-        (
-          <NavLink
-            key={to}
-            to={to}
-            // 브라우저 전체를 새로고침하지 않고 주소창의 url만 바꿔주는 역할을 한다.
-            className={ ({isActive}) => 
-              isActive? 'text-[#b2dab1] font-bold' : 'text-gray-500'
-            }
-          >
+    <div className="flex gap-3 p-4">
+      {LINKS.map(({ to, label }) => (
+        <NavLink
+          key={to}
+          to={to}
+          // 브라우저 전체를 새로고침하지 않고 주소창의 url만 바꿔주는 역할을 한다.
+          className={({ isActive }) => (isActive ? "text-[#ffb3b3] font-bold" : "text-gray-400 hover:text-[#ffb3b3]")}
+        >
           {label}
-          </NavLink>
-        ))
-      }
+        </NavLink>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
 
 /*
 <흐름>

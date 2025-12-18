@@ -18,10 +18,9 @@ export interface CrewCredit {
 
 // Credits 전용 타입
 export interface Credits {
-    cast: CastCredit[];
-    crew: CrewCredit[];
-  };
-
+  cast: CastCredit[];
+  crew: CrewCredit[];
+}
 
 export interface MovieDetail {
   id: number;
@@ -40,9 +39,7 @@ export interface MovieDetail {
   tagline: string | null;
   vote_average: number;
   vote_count: number;
+}
 
-};
-
-export type MovieDetailWithCredits = MovieDetail & {credits: Credits };
+export type MovieDetailWithCredits = MovieDetail & { credits: Credits };
 // &는 type에서만 사용가능! interface는 사용불가능하다.
-
